@@ -1,6 +1,6 @@
 export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
     return (
-        <li>  {/* Use key to know which todo is changing. Performance optimization  */}
+        <li>
             <label>
                 <input type="checkbox" checked={
                     completed}

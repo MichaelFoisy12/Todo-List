@@ -7,10 +7,9 @@ import { TodoList } from "./TodoList"
 
 export default function App() {
     // Rerender data for app.. use useState
-    // Hook put at top of files
-   
     // useState is checking local storage and getting value if exists, if it doesnt it defualts to empty array
-    const [todos, setTodos] = useState(() => {
+
+    const [todos, setTodos] = useState(() => { 
       const localValue = localStorage.getItem("ITEMS")
         if (localValue == null) return []
 
@@ -18,9 +17,7 @@ export default function App() {
     })
 
     // Runs evertime we want our todos to change
-
     // Everytime we  modify our todos, run funciton and save new value to todos in local storage
-    
     useEffect(() => {
         localStorage.setItem("ITEMS", JSON.stringify(todos)) // Storing todos in local storage
     }, [todos])
